@@ -1,0 +1,41 @@
+<!--
+Author - Siddharth Mark Joseph
+Purpose - Partial View for the state "sixteen"
+Ver - 1.0
+-->
+<div class="container">
+    <div class = "row">
+        <h1>Weekly Forecast (8 Day Forecast)</h1>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="name">Enter the name of the city in the United States:</label>
+            <input type="text" class="form-control" id="name" ng-model="vm.name" ng-click="vm.set()">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" ng-disabled="!vm.name" ng-click="vm.onSubmit()">Submit</button>
+        </div>
+    </div>
+    <div class="row" ng-hide="vm.toggle">
+        <div class="jumbotron">
+            <h1 class="text-center">Weather in {{vm.name}}</h1>
+            <ul ng-repeat="var in vm.dates track by $index">
+                <li><h4>{{var}}</h4>
+                    <ul>
+                        <li ng-repeat="(key,value) in vm.arr[$index]">{{key}}:{{value}}</li>
+                        <li ng-repeat="(key,value) in vm.arr1[$index]">{{key}}:{{value}}</li>
+                    </ul>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div ng-show="vm.error">
+        <div class="row">
+            <div class="jumbotron">
+                <h2 class="text-center">{{vm.name}} is not a city in the United States</h2>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<!--
+ Author - Siddharth Mark Joseph
+ Ver - 1.0
+ Purpose - Main index.html page
+ -->
+
+<!doctype html>
+<html>
+<head>
+    <title> Weather Application </title>
+    <link rel = "stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel = "stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel = "stylesheet" href = "css/style.css">
+
+
+    <script type = "text/javascript" src = "bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src = "bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src = "bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src = "bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type = "text/javascript" src = "bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src = "bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-resource/angular-resource.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers/CurrentWeather.js"></script>
+    <script type="text/javascript" src="scripts/services/getid.js"></script>
+    <script type="text/javascript" src="scripts/controllers/FiveWeather.js"></script>
+    <script type="text/javascript" src="scripts/controllers/SixteenWeather.js"></script>
+
+
+</head>
+<body ng-app="weatherApp">
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-sref='#'>Weather Options</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="current">Current Weather</a></li>
+        <li><a ui-sref="five">5 Day Forecast</a></li>
+        <li><a ui-sref="sixteen">Weekly Forecast</a></li>
+    </ul>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+      <div class="jumbotron"><h1 class="text-center">Weather Forecast</h1></div>
+    </div>
+</div>
+<div class="container">
+    <div ui-view></div>
+</div>
+
+
+</body>
+
+</html>
